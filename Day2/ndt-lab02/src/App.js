@@ -1,22 +1,21 @@
-function MyPage() {
-  return (
-    <a href="https://www.facebook.com/ucthanh.364915" target="_blank" rel="noopener noreferrer">
-      <button>
-        My personal Socialmedia
-      </button>
-    </a>
-  );
-}
+import React from "react";
+import NdtCompInfor from "./NdtCompInfor";
 
-export default function Introduce() {
+function App() {
+  const personalInfo = {
+    Hoten: "Nguyễn Đức Thành",
+    Masv: "2310900098",
+    NgaySinh: "03/04/2005",
+    DienThoai: "0123-456-789",
+    TenLop: "K23CNT2"
+  };
+
   return (
     <div>
-      <h1>Họ và tên: Nguyễn Đức Thành</h1>
-      <h2>Mã sinh viên: 2310900098</h2>
-      <h2>Ngày sinh: 03/04/2005</h2>
-      <h2>Điện thoại: 0367907165</h2>
-      <h2>Tên lớp: K23CNT2</h2>
-      <MyPage />
+      <h1>Thông tin cá nhân</h1>
+      <NdtCompInfor info={personalInfo} />
     </div>
   );
 }
+
+export default App;
