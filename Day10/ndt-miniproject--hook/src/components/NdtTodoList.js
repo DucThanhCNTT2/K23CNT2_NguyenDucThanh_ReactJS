@@ -1,10 +1,10 @@
 import { useEffect, useReducer } from 'react'
+import { todoReducer } from '../reducers/NdtTodoReducer';
 import NdtAddTodo from './NdtAddTodo';
 import NdtTodoItem from './NdtTodoItem';
-import { NdtTodoReducer } from '../reducers/NdtTodoReducer';
 
 function NdtTodoList() {
-    const [todos, dispatch] = useReducer(NdtTodoReducer, [], () => {
+    const [todos, dispatch] = useReducer(todoReducer, [], () => {
         const storedTodos = localStorage.getItem("todos");
         return storedTodos ? JSON.parse(storedTodos) : [];
     });
@@ -15,10 +15,10 @@ function NdtTodoList() {
 
     return (
         <div>
-            <h2>Danh sách công việc</h2>
+            <h2>Danh Sách Công Việc</h2>
             <NdtAddTodo dispatch={dispatch} />
             <ul>
-                {todos.map((todo) => (
+                {todos.map(todo => (
                     <NdtTodoItem key={todo.id} todo={todo} dispatch={dispatch} />
                 ))}
             </ul>

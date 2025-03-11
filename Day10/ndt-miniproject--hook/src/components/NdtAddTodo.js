@@ -3,7 +3,7 @@ import { useState } from "react";
 function NdtAddTodo({ dispatch }) {
     const [text, setText] = useState("");
 
-    const ndtHandleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (text.trim()) {
             dispatch({ type: "ADD_TODO", payload: text });
@@ -12,7 +12,7 @@ function NdtAddTodo({ dispatch }) {
     };
 
     return (
-        <form onSubmit={ndtHandleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 value={text}
@@ -22,6 +22,6 @@ function NdtAddTodo({ dispatch }) {
             <button type="submit">Thêm</button>
         </form>
     );
-};
+}
 
 export default NdtAddTodo;

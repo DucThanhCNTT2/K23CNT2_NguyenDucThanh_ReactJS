@@ -1,18 +1,19 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useState, useContext } from "react";
+
 const ThemeContext = createContext();
 
-export default function NdtThemeProvider({ children }) {
-    const [theme, setTheme] = useState("light");
+export function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState("light");
 
-    const toggleTheme = () => {
-        setTheme(theme === "light" ? "dark" : "light");
-    };
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
-    return (
-        <ThemeContext.Provider value={[theme, toggleTheme]}>
-        <div className={theme}>{children}</div> 
-        </ThemeContext.Provider>
-    );
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className={theme}>{children}</div>
+    </ThemeContext.Provider>
+  );
 }
 
 export function useTheme() {

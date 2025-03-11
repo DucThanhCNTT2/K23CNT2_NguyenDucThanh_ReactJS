@@ -8,7 +8,7 @@ export default function NdtTodoItem({ todo, dispatch }) {
             <button
                 onClick={() => dispatch({ type: "DELETE_TODO", payload: todo.id })}
             >
-                X
+                ❌
             </button>
         </li>
     )
