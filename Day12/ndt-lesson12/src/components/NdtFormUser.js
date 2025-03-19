@@ -5,7 +5,7 @@ export default function NdtFormUser({ onNdtAddNew}) {
 
     const [id, setId] = useState('');
     const [ndtFullName, setndtFullName] = useState('');
-    const [ndtUserName, setndtUserName] = useState('');
+    const [ndtUserName, setNdtUserName] = useState('');
     const [ndtPassword, setndtPassword] = useState('');
 
     const ndtHandleSubmit = (event) => {
@@ -24,7 +24,7 @@ export default function NdtFormUser({ onNdtAddNew}) {
                 <input type="text" name='ndtFullName' value={ndtFullName} onChange={(ev)=>setndtFullName(ev.target.value)} />
             </p>
             <p>Tài khoản:
-                <input type="text" name='ndtUserName' value={ndtUserName} onChange={(ev)=>setndtUserName(ev.target.value)} />
+                <input type="text" name='ndtUserName' value={ndtUserName} onChange={(ev)=>setNdtUserName(ev.target.value)} />
             </p>
             <p>Mật khẩu:
                 <input type="password" name='ndtPassword' value={ndtPassword} onChange={(ev)=>setndtPassword(ev.target.value)} />
